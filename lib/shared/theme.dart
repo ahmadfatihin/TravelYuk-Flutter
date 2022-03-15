@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 Color kPrimaryColor = Color(0xFFF5c40cc);
 Color kBlackColor = Color(0xFF01F1449);
@@ -8,3 +9,27 @@ Color kGreenColor = Color(0xFF0EC3AE);
 Color kRedColor = Color(0xFFEB70A5);
 Color KBackgroundColor = Color(0xFFFAFAFA);
 Color KInactiveColor = Color(0xFFDBD7EC);
+
+TextStyle blackTextStyle = GoogleFonts.poppins(
+    color: kBlackColor,
+);
+
+TextStyle whiteTextStyle = GoogleFonts.poppins(
+    color: kWhiteColor,
+);
+
+TextStyle greyTextStyle = GoogleFonts.poppins(
+    color: kGreyColor,
+);
+
+TextStyle redTextStyle = GoogleFonts.poppins(
+    color: kRedColor,
+);
+
+TextStyle greenTextStyle = GoogleFonts.poppins(
+    color: kGreenColor,
+);
+
+TextStyle purpleTextStyle = GoogleFonts.poppins(
+    color: kPrimaryColor,
+);
