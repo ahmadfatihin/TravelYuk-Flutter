@@ -44,8 +44,25 @@ class GetStartedPage extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 Container(
-                  margin: EdgeInsets.only(bottom: 75),
-                )
+                    width: 220,
+                    height: 55,
+                    margin: EdgeInsets.only(top: 50),
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: kPrimaryColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                      ),
+                      child: Text(
+                        'Get Started',
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: medium,
+                        ),
+                      ),
+                    ))
               ],
             ),
           ),
