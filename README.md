@@ -1,3 +1,4 @@
 # TravelYuk-Flutter
 
-Aplikasi Pemesanan Tiket Pesawat. Dibuat dengan Flutter
+Flight Booking Application. Made with Flutter.
+``flutter packages get`` install requirement in pubspec.yaml
