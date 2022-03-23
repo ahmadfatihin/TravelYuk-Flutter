@@ -8,7 +8,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget title() {
       return Container(
-        margin: EdgeInsets.only(top: 50),
+        margin: EdgeInsets.only(top: 30),
         child: Text(
           'Join Us and Get \nEasy Travel Around The World',
           style: blackTextStyle.copyWith(
@@ -21,10 +21,12 @@ class SignUpPage extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: ListView(
-        // create padding that symetric based on default Margin ini shared/theme.dart
-        padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [title()],
+      body: SafeArea(
+        child: ListView(
+          // create padding that symetric based on default Margin ini shared/theme.dart
+          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+          children: [title()],
+        ),
       ),
     );
   }
