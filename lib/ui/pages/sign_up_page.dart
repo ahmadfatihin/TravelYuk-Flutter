@@ -25,11 +25,15 @@ class SignUpPage extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Full Name'),
+            Text(
+              'Full Name',
+              style: blackTextStyle.copyWith(fontWeight: semiBold),
+            ),
             SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               decoration: InputDecoration(
+                hintStyle: greyTextStyle,
                 hintText: 'Enter your full name',
               ),
             )
@@ -42,11 +46,13 @@ class SignUpPage extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Email Address'),
+            Text('Email Address',
+                style: blackTextStyle.copyWith(fontWeight: semiBold)),
             SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               decoration: InputDecoration(
+                hintStyle: greyTextStyle,
                 hintText: 'testtravel@gmail.com',
               ),
             )
@@ -59,12 +65,14 @@ class SignUpPage extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Password'),
+            Text('Password',
+                style: blackTextStyle.copyWith(fontWeight: semiBold)),
             SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               obscureText: true,
               decoration: InputDecoration(
+                hintStyle: greyTextStyle,
                 hintText: 'Enter your password',
               ),
             )
@@ -77,12 +85,13 @@ class SignUpPage extends StatelessWidget {
           margin: EdgeInsets.only(bottom: 30),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('Hobby'),
+            Text('Hobby', style: blackTextStyle.copyWith(fontWeight: semiBold)),
             SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               obscureText: true,
               decoration: InputDecoration(
+                hintStyle: greyTextStyle,
                 hintText: 'Your hobby',
               ),
             )
