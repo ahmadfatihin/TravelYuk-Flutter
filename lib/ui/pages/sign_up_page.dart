@@ -90,6 +90,32 @@ class SignUpPage extends StatelessWidget {
         );
       }
 
+      Widget submitButton() {
+        return Container(
+          width: double.infinity,
+          height: 50,
+          margin: EdgeInsets.only(bottom: 30),
+          child: TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/home');
+            },
+            style: TextButton.styleFrom(
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+              ),
+            ),
+            child: Text(
+              'Get Started',
+              style: whiteTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: medium,
+              ),
+            ),
+          ),
+        );
+      }
+
       return Container(
           margin: EdgeInsets.only(top: 30),
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -101,7 +127,8 @@ class SignUpPage extends StatelessWidget {
             nameInput(),
             emailInput(),
             passwordInput(),
-            hobbyInput()
+            hobbyInput(),
+            submitButton(),
           ]));
     }
 
