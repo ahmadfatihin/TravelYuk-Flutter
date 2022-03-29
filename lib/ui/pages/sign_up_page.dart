@@ -20,7 +20,7 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget inputSection() {
-      Widget emailInput() {
+      Widget nameInput() {
         return Container(
           margin: EdgeInsets.only(bottom: 20),
           child:
@@ -37,6 +37,59 @@ class SignUpPage extends StatelessWidget {
         );
       }
 
+      Widget emailInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 20),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Email Address'),
+            SizedBox(height: 6),
+            TextFormField(
+              cursorColor: kBlackColor,
+              decoration: InputDecoration(
+                hintText: 'testtravel@gmail.com',
+              ),
+            )
+          ]),
+        );
+      }
+
+      Widget passwordInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 20),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Password'),
+            SizedBox(height: 6),
+            TextFormField(
+              cursorColor: kBlackColor,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Enter your password',
+              ),
+            )
+          ]),
+        );
+      }
+
+      Widget hobbyInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 30),
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Hobby'),
+            SizedBox(height: 6),
+            TextFormField(
+              cursorColor: kBlackColor,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Your hobby',
+              ),
+            )
+          ]),
+        );
+      }
+
       return Container(
           margin: EdgeInsets.only(top: 30),
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -44,7 +97,12 @@ class SignUpPage extends StatelessWidget {
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(defaultRadius),
           ),
-          child: Column(children: [emailInput()]));
+          child: Column(children: [
+            nameInput(),
+            emailInput(),
+            passwordInput(),
+            hobbyInput()
+          ]));
     }
 
     return Scaffold(
