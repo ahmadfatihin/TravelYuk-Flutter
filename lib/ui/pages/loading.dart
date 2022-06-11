@@ -1,15 +1,34 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
-class LoadingPage extends StatefulWidget {
-  const LoadingPage({Key? key}) : super(key: key);
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoadingPage> createState() => _LoadingPageState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _LoadingPageState extends State<LoadingPage> {
+class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Center(
+          child: TextLiquidFill(
+            text: 'Loading...',
+            waveColor: Colors.blueAccent,
+            boxBackgroundColor: Colors.white,
+            textStyle: TextStyle(
+              fontSize: 50.0,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
+            loadDuration: Duration(seconds: 6),
+            // boxHeight: 300.0,
+          ),
+        ),
+      ),
+    );
   }
 }

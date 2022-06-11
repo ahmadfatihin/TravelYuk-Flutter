@@ -54,3 +54,4 @@ injectable_core.config.dart
 **.mocks.dart
 **.gr.dart
 pubspec.lock
+windows/flutter/generated_plugins.cmake
