@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../shared/theme.dart';
 
-
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({Key? key}) : super(key: key);
 
@@ -24,11 +23,11 @@ class GetStartedPage extends StatelessWidget {
           ),
           Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Fly Like a Bird',
-                  style: whiteTextStyle.copyWith(
+                  style: blackTextStyle.copyWith(
                     fontSize: 32,
                     fontWeight: semiBold,
                   ),
@@ -38,7 +37,7 @@ class GetStartedPage extends StatelessWidget {
                 ),
                 Text(
                   'Explore new world with us and let\nyourself get an amazing experiences',
-                  style: whiteTextStyle.copyWith(
+                  style: blackTextStyle.copyWith(
                     fontSize: 16,
                     fontWeight: light,
                   ),
@@ -47,13 +46,13 @@ class GetStartedPage extends StatelessWidget {
                 Container(
                     width: 220,
                     height: 55,
-                    margin: EdgeInsets.only(top: 50, bottom: 35),
+                    margin: EdgeInsets.only(top: 80, bottom: 35),
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/signUp');
                       },
                       style: TextButton.styleFrom(
-                        backgroundColor: kPrimaryColor,
+                        backgroundColor: Colors.blueAccent,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(defaultRadius),
                         ),
