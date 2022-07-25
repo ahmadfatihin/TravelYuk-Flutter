@@ -12,7 +12,7 @@ class GetStartedPage extends StatelessWidget {
           Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
@@ -32,7 +32,7 @@ class GetStartedPage extends StatelessWidget {
                     fontWeight: semiBold,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(
@@ -46,7 +46,7 @@ class GetStartedPage extends StatelessWidget {
                 Container(
                     width: 220,
                     height: 55,
-                    margin: EdgeInsets.only(top: 80, bottom: 35),
+                    margin: const EdgeInsets.only(top: 80, bottom: 35),
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/signUp');
