@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:travel/ui/pages/get_started_page.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../../shared/theme.dart';
 
@@ -17,7 +15,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     // TODO: implement initState
-    Timer(Duration(seconds: 5), () {
+    Timer(const Duration(seconds: 5), () {
       Navigator.pushNamed(context, '/getStarted');
     });
     super.initState();
@@ -35,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
               width: 100,
               height: 100,
               // margin: EdgeInsets.only(bottom: 50),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/icon_logo.png'))),
             ),
@@ -51,25 +49,22 @@ class _SplashPageState extends State<SplashPage> {
               textStyle: whiteTextStyle.copyWith(
                   fontSize: 40, fontWeight: extrabold, letterSpacing: 5),
               textAlign: TextAlign.center,
-              waveDuration: Duration(seconds: 4),
-              loadDuration: Duration(seconds: 5),
+              waveDuration: const Duration(seconds: 4),
+              loadDuration: const Duration(seconds: 5),
               // boxHeight: 300.0,
             ),
             Container(
-              margin: EdgeInsets.only(top: 50),
+              margin: const EdgeInsets.only(top: 50),
               child: DefaultTextStyle(
                 style: blackTextStyle.copyWith(
                     fontSize: 20, fontWeight: bold, letterSpacing: 4),
                 child: AnimatedTextKit(
-                  pause: Duration(milliseconds: 2500),
+                  pause: const Duration(milliseconds: 2500),
                   totalRepeatCount: 1,
                   animatedTexts: [
                     TyperAnimatedText('Created By'),
                     TyperAnimatedText('Ahmad Fatihin'),
                   ],
-                  onTap: () {
-                    print("Tap Event");
-                  },
                 ),
               ),
             ),
