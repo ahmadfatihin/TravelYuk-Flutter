@@ -8,7 +8,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget title() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 30),
         child: Text(
           'Join Us and Get \nEasy Travel Around The World',
           style: blackTextStyle.copyWith(
@@ -22,14 +22,14 @@ class SignUpPage extends StatelessWidget {
     Widget inputSection() {
       Widget nameInput() {
         return Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
               'Full Name',
               style: blackTextStyle.copyWith(fontWeight: semiBold),
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               decoration: InputDecoration(
@@ -43,12 +43,12 @@ class SignUpPage extends StatelessWidget {
 
       Widget emailInput() {
         return Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Email Address',
                 style: blackTextStyle.copyWith(fontWeight: semiBold)),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               decoration: InputDecoration(
@@ -62,12 +62,12 @@ class SignUpPage extends StatelessWidget {
 
       Widget passwordInput() {
         return Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: const EdgeInsets.only(bottom: 20),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Password',
                 style: blackTextStyle.copyWith(fontWeight: semiBold)),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               obscureText: true,
@@ -82,11 +82,11 @@ class SignUpPage extends StatelessWidget {
 
       Widget hobbyInput() {
         return Container(
-          margin: EdgeInsets.only(bottom: 30),
+          margin: const EdgeInsets.only(bottom: 30),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('Hobby', style: blackTextStyle.copyWith(fontWeight: semiBold)),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             TextFormField(
               cursorColor: kBlackColor,
               obscureText: true,
@@ -103,7 +103,7 @@ class SignUpPage extends StatelessWidget {
         return Container(
           width: double.infinity,
           height: 50,
-          margin: EdgeInsets.only(bottom: 30),
+          margin: const EdgeInsets.only(bottom: 30),
           child: TextButton(
             onPressed: () {
               Navigator.pushNamed(context, '/home');
@@ -126,8 +126,8 @@ class SignUpPage extends StatelessWidget {
       }
 
       return Container(
-          margin: EdgeInsets.only(top: 30),
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+          margin: const EdgeInsets.only(top: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
           decoration: BoxDecoration(
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(defaultRadius),

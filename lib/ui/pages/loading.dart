@@ -19,12 +19,12 @@ class _LoadingScreenState extends State<LoadingScreen> {
             text: 'Loading...',
             waveColor: Colors.blueAccent,
             boxBackgroundColor: Colors.white,
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontSize: 50.0,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
-            loadDuration: Duration(seconds: 6),
+            loadDuration: const Duration(seconds: 6),
             // boxHeight: 300.0,
           ),
         ),
