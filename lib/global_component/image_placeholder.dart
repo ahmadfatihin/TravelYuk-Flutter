@@ -27,8 +27,11 @@ class ImagePlaceholder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (imageUrl != null && imageUrl != "") {
-      return Image.asset(imageUrl as String,
-          height: height, width: width, fit: imageFit);
+      return ClipRRect(
+        borderRadius: borderRadius,
+        child: Image.asset(imageUrl as String,
+            height: height, width: width, fit: imageFit),
+      );
     } else {
       return _buildPlaceholder(context);
     }

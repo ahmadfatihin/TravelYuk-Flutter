@@ -83,6 +83,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ImagePlaceholder(
+                          borderRadius: BorderRadius.all(Radius.circular(25)),
                           imageUrl: data[index].image,
                           height: 400,
                           width: 300,
