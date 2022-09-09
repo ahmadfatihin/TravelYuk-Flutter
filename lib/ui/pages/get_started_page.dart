@@ -32,7 +32,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
         "Look At", "Liquid Swipe"),
     ItemData(Colors.green, "assets/destination3.png", "Liked?", "Fork!",
         "Give Star!"),
-    ItemData(Colors.yellow, "", "Can be", "Used for", "Onboarding design"),
+    ItemData(Colors.yellow, "", "", "Used for", "Onboarding design"),
   ];
   @override
   void initState() {
@@ -79,7 +79,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      // mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ImagePlaceholder(
@@ -95,12 +95,32 @@ class _GetStartedPageState extends State<GetStartedPage> {
                           children: <Widget>[
                             Text(
                               data[index].text1,
+                              style: blackTextStyle.copyWith(
+                                  fontSize: 14, fontWeight: bold),
                             ),
-                            Text(
-                              data[index].text2,
-                            ),
-                            Text(
-                              data[index].text3,
+                            Container(
+                              margin: EdgeInsets.symmetric(vertical: 10),
+                              child: DotsIndicator(
+                                onTap: (position) {
+                                  setState(() {
+                                    liquidController.animateToPage(
+                                        page: position.toInt());
+                                  });
+                                },
+                                dotsCount: data.length,
+                                position:
+                                    liquidController.currentPage.toDouble(),
+                                decorator: DotsDecorator(
+                                  activeSize: const Size(16, 8),
+                                  spacing: const EdgeInsets.all(7),
+                                  activeShape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                  color: Colors.white, // Inactive color
+                                  activeColor: Colors.white70,
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -110,105 +130,80 @@ class _GetStartedPageState extends State<GetStartedPage> {
                 ],
               );
             },
-            positionSlideIcon: 0.8,
-            // slideIconWidget: const Icon(Icons.arrow_back_ios),
+            positionSlideIcon: 0.6,
+            slideIconWidget: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.transparent,
+            ),
             onPageChangeCallback: pageChangeCallback,
             waveType: WaveType.liquidReveal,
             liquidController: liquidController,
             fullTransitionValue: 880,
             enableSideReveal: true,
-            enableLoop: true,
+            enableLoop: false,
             ignoreUserGestureWhileAnimating: true,
           ),
-          // LiquidSwipe(
-          //   pages: [
-          //     Container(
-          //       child: Text("TEst"),
-          //     ),
-          //     Center(
-          //       child: Column(
-          //         crossAxisAlignment: CrossAxisAlignment.center,
-          //         mainAxisAlignment: MainAxisAlignment.center,
-          //         children: [
-          //           Text(
-          //             'Fly Like a Bird',
-          //             style: blackTextStyle.copyWith(
-          //               fontSize: 32,
-          //               fontWeight: semiBold,
-          //             ),
-          //           ),
-          //           const SizedBox(
-          //             height: 10,
-          //           ),
-          //           Text(
-          //             'Explore new world with us and let\nyourself get an amazing experiences',
-          //             style: blackTextStyle.copyWith(
-          //               fontSize: 16,
-          //               fontWeight: light,
-          //             ),
-          //             textAlign: TextAlign.center,
-          //           ),
-          //           Container(
-          //               width: 220,
-          //               height: 55,
-          //               margin: const EdgeInsets.only(top: 80, bottom: 35),
-          //               child: TextButton(
-          //                 onPressed: () {
-          //                   Navigator.pushNamed(context, '/signUp');
-          //                 },
-          //                 style: TextButton.styleFrom(
-          //                   backgroundColor: Colors.blueAccent,
-          //                   shape: RoundedRectangleBorder(
-          //                     borderRadius:
-          //                         BorderRadius.circular(defaultRadius),
-          //                   ),
-          //                 ),
-          //                 child: Text(
-          //                   'Get Started',
-          //                   style: whiteTextStyle.copyWith(
-          //                     fontSize: 16,
-          //                     fontWeight: medium,
-          //                   ),
-          //                 ),
-          //               )),
-          //           Container(
-          //             margin: EdgeInsets.symmetric(vertical: 10),
-          //             child: DotsIndicator(
-          //               onTap: (position) {
-          //                 setState(() {
-          //                   liquidController.animateToPage(
-          //                       page: liquidController.currentPage + 1 >
-          //                               data.length - 1
-          //                           ? 0
-          //                           : liquidController.currentPage + 1);
-          //                 });
-          //               },
-          //               dotsCount: data.length,
-          //               position: liquidController.currentPage.toDouble(),
-          //               decorator: DotsDecorator(
-          //                 activeSize: const Size(16, 8),
-          //                 spacing: EdgeInsets.all(5),
-          //                 activeShape: RoundedRectangleBorder(
-          //                     borderRadius: BorderRadius.circular(5.0)),
-          //                 shape: RoundedRectangleBorder(
-          //                     borderRadius: BorderRadius.circular(5.0)),
-          //                 color: Colors.orange, // Inactive color
-          //                 activeColor: Colors.amber,
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ],
-          //   positionSlideIcon: 0.8,
-          //   slideIconWidget: Icon(Icons.arrow_back_ios),
-          //   waveType: WaveType.liquidReveal,
-          //   liquidController: liquidController,
-          //   fullTransitionValue: 880,
-          //   enableLoop: true,
-          //   ignoreUserGestureWhileAnimating: true,
-          // ),
+          if (liquidController.currentPage > 1)
+            AnimatedPadding(
+              padding: liquidController.currentPage == 3
+                  ? EdgeInsets.only(top: 30)
+                  : EdgeInsets.all(0),
+              duration: const Duration(seconds: 1),
+              curve: Curves.fastOutSlowIn,
+              child: AnimatedOpacity(
+                opacity: liquidController.currentPage == 3 ? 1.0 : 0.0,
+                duration: const Duration(seconds: 1),
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Fly Like a Bird',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 32,
+                          fontWeight: semiBold,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        'Explore new world with us and let\nyourself get an amazing experiences',
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: light,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+                          width: 220,
+                          height: 55,
+                          margin: const EdgeInsets.only(top: 80, bottom: 35),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/signUp');
+                            },
+                            style: TextButton.styleFrom(
+                              backgroundColor: Colors.blueAccent,
+                              shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.circular(defaultRadius),
+                              ),
+                            ),
+                            child: Text(
+                              'Get Started',
+                              style: whiteTextStyle.copyWith(
+                                fontSize: 16,
+                                fontWeight: medium,
+                              ),
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );
