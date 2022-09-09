@@ -5,7 +5,7 @@ double defaultMargin = 23;
 double defaultRadius = 15;
 
 Color kPrimaryColor = const Color(0xfff5c40c);
-Color kBlackColor = const Color(0xff01f1449);
+Color kBlackColor = const Color(0xff1f1449);
 Color kWhiteColor = const Color(0xFFFFFFFF);
 Color kGreyColor = const Color(0xFF9698A9);
 Color kGreenColor = const Color(0x0ff163e0);
