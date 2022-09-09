@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
+import 'package:travel/global_component/image_placeholder.dart';
 import '../../shared/theme.dart';
 
 class GetStartedPage extends StatefulWidget {
@@ -31,8 +32,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
         "Look At", "Liquid Swipe"),
     ItemData(Colors.green, "assets/destination3.png", "Liked?", "Fork!",
         "Give Star!"),
-    ItemData(Colors.yellow, "assets/destination4.png", "Can be", "Used for",
-        "Onboarding design"),
+    ItemData(Colors.yellow, "", "Can be", "Used for", "Onboarding design"),
   ];
   @override
   void initState() {
@@ -79,13 +79,14 @@ class _GetStartedPageState extends State<GetStartedPage> {
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.max,
+                      // mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Image.asset(
-                          data[index].image,
+                        ImagePlaceholder(
+                          imageUrl: data[index].image,
                           height: 400,
-                          fit: BoxFit.contain,
+                          width: 300,
+                          imageFit: BoxFit.fill,
                         ),
                         const Padding(
                           padding: EdgeInsets.all(20.0),
