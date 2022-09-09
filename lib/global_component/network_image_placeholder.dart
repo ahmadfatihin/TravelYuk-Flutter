@@ -76,7 +76,7 @@ class NetworkImagePlaceholder extends StatelessWidget {
           image: DecorationImage(
               fit: imageFit,
               image: assetsPlaceholder ??
-                  AssetImage("assets/image/logo/stargo-black.png")
+                  const AssetImage("assets/destination1.png")
               //TODO:// flutter_gen doesn't work because we need to migrate into nullsafety
               //Assets.images.logo.stargoBlack,
               )),
