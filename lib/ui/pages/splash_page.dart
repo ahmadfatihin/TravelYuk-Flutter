@@ -1,3 +1,5 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -16,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     // TODO: implement initState
     Timer(const Duration(seconds: 5), () {
-      Navigator.pushNamed(context, '/getStarted');
+      Navigator.pushReplacementNamed(context, '/getStarted');
     });
     super.initState();
   }
