@@ -26,13 +26,12 @@ class _GetStartedPageState extends State<GetStartedPage> {
   late LiquidController liquidController;
   late UpdateType updateType;
   List<ItemData> data = [
-    ItemData(
-        Colors.blue, "assets/destination1.png", "Hi", "It's Me", "Sahdeep"),
-    ItemData(Colors.deepPurpleAccent, "assets/destination2.png", "Take a",
+    ItemData(Colors.white, "assets/destination9.png", "Hi", "It's Me", ""),
+    ItemData(Colors.blue, "assets/destination1.png", "Take a", "It's Me", ""),
+    ItemData(Colors.deepPurpleAccent, "assets/destination2.png", "Seat",
         "Look At", "Liquid Swipe"),
-    ItemData(Colors.green, "assets/destination3.png", "Liked?", "Fork!",
-        "Give Star!"),
-    ItemData(Colors.yellow, "", "", "Used for", "Onboarding design"),
+    ItemData(Colors.green, "assets/destination3.png", "", "", "Give Star!"),
+    ItemData(Colors.transparent, "", "", "", ""),
   ];
   @override
   void initState() {
@@ -83,7 +82,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ImagePlaceholder(
-                          borderRadius: BorderRadius.all(Radius.circular(25)),
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
                           imageUrl: data[index].image,
                           height: 400,
                           width: 300,
@@ -144,15 +143,15 @@ class _GetStartedPageState extends State<GetStartedPage> {
             enableLoop: false,
             ignoreUserGestureWhileAnimating: true,
           ),
-          if (liquidController.currentPage > 1)
+          if (liquidController.currentPage > 2)
             AnimatedPadding(
-              padding: liquidController.currentPage == 3
-                  ? EdgeInsets.only(top: 30)
+              padding: liquidController.currentPage == 4
+                  ? EdgeInsets.only(top: 45)
                   : EdgeInsets.all(0),
               duration: const Duration(seconds: 1),
               curve: Curves.fastOutSlowIn,
               child: AnimatedOpacity(
-                opacity: liquidController.currentPage == 3 ? 1.0 : 0.0,
+                opacity: liquidController.currentPage == 4 ? 1.0 : 0.0,
                 duration: const Duration(seconds: 1),
                 child: Center(
                   child: Column(
