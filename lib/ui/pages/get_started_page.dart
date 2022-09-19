@@ -26,14 +26,11 @@ class _GetStartedPageState extends State<GetStartedPage> {
   late LiquidController liquidController;
   late UpdateType updateType;
   List<ItemData> data = [
-    ItemData(
-        Colors.white, "assets/images/destination9.png", "Hi", "It's Me", ""),
-    ItemData(
-        Colors.blue, "assets/images/destination1.png", "Take a", "It's Me", ""),
+    ItemData(Colors.white, "assets/images/destination9.png", "Hi", "", ""),
+    ItemData(Colors.blue, "assets/images/destination1.png", "Take a", "", ""),
     ItemData(Colors.deepPurpleAccent, "assets/images/destination2.png", "Seat",
-        "Look At", "Liquid Swipe"),
-    ItemData(
-        Colors.green, "assets/images/destination3.png", "", "", "Give Star!"),
+        "", ""),
+    ItemData(Colors.green, "assets/images/destination3.png", "With Me", "", ""),
     ItemData(Colors.transparent, "", "", "", ""),
   ];
   @override
@@ -85,7 +82,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ImagePlaceholder(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(8)),
                           imageUrl: data[index].image,
                           height: 400,
                           width: 300,
@@ -102,7 +100,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                                   fontSize: 14, fontWeight: bold),
                             ),
                             Container(
-                              margin: EdgeInsets.symmetric(vertical: 10),
+                              margin: const EdgeInsets.symmetric(vertical: 10),
                               child: DotsIndicator(
                                 onTap: (position) {
                                   setState(() {
@@ -120,10 +118,10 @@ class _GetStartedPageState extends State<GetStartedPage> {
                                       borderRadius: BorderRadius.circular(5.0)),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5.0)),
-                                  color: Color.fromARGB(
+                                  color: const Color.fromARGB(
                                       255, 125, 184, 232), // Inactive color
                                   activeColor:
-                                      Color.fromARGB(255, 211, 229, 245),
+                                      const Color.fromARGB(255, 211, 229, 245),
                                 ),
                               ),
                             ),
@@ -151,8 +149,8 @@ class _GetStartedPageState extends State<GetStartedPage> {
           if (liquidController.currentPage > 2)
             AnimatedPadding(
               padding: liquidController.currentPage == 4
-                  ? EdgeInsets.only(top: 45)
-                  : EdgeInsets.all(0),
+                  ? const EdgeInsets.only(top: 45)
+                  : const EdgeInsets.all(0),
               duration: const Duration(seconds: 1),
               curve: Curves.fastOutSlowIn,
               child: AnimatedOpacity(
