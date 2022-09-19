@@ -66,7 +66,6 @@ class ImagePlaceholder extends StatelessWidget {
     //       image: DecorationImage(
     //           fit: imageFit,
     //           image: assetsPlaceholder ?? AssetImage("assets/destination1.png")
-    //           //Assets.images.logo.stargoBlack,
     //           )),
     // );
   }

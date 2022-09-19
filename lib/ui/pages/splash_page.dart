@@ -37,7 +37,7 @@ class _SplashPageState extends State<SplashPage> {
               // margin: EdgeInsets.only(bottom: 50),
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage('assets/icon_logo.png'))),
+                      image: AssetImage('assets/images/icon_logo.png'))),
             ),
             Text(
               'Travel Yuk',

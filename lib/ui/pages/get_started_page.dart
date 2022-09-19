@@ -26,11 +26,14 @@ class _GetStartedPageState extends State<GetStartedPage> {
   late LiquidController liquidController;
   late UpdateType updateType;
   List<ItemData> data = [
-    ItemData(Colors.white, "assets/destination9.png", "Hi", "It's Me", ""),
-    ItemData(Colors.blue, "assets/destination1.png", "Take a", "It's Me", ""),
-    ItemData(Colors.deepPurpleAccent, "assets/destination2.png", "Seat",
+    ItemData(
+        Colors.white, "assets/images/destination9.png", "Hi", "It's Me", ""),
+    ItemData(
+        Colors.blue, "assets/images/destination1.png", "Take a", "It's Me", ""),
+    ItemData(Colors.deepPurpleAccent, "assets/images/destination2.png", "Seat",
         "Look At", "Liquid Swipe"),
-    ItemData(Colors.green, "assets/destination3.png", "", "", "Give Star!"),
+    ItemData(
+        Colors.green, "assets/images/destination3.png", "", "", "Give Star!"),
     ItemData(Colors.transparent, "", "", "", ""),
   ];
   @override
@@ -51,7 +54,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/get_started.png',
+                  'assets/images/get_started.png',
                 ),
               ),
             ),
@@ -72,7 +75,7 @@ class _GetStartedPageState extends State<GetStartedPage> {
                             : null,
                         fit: BoxFit.cover,
                         image: const AssetImage(
-                          'assets/get_started.png',
+                          'assets/images/get_started.png',
                         ),
                       ),
                     ),
@@ -117,8 +120,10 @@ class _GetStartedPageState extends State<GetStartedPage> {
                                       borderRadius: BorderRadius.circular(5.0)),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(5.0)),
-                                  color: Colors.white, // Inactive color
-                                  activeColor: Colors.white70,
+                                  color: Color.fromARGB(
+                                      255, 125, 184, 232), // Inactive color
+                                  activeColor:
+                                      Color.fromARGB(255, 211, 229, 245),
                                 ),
                               ),
                             ),
