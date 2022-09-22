@@ -32,18 +32,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   dots_indicator: ^2.1.0
   easy_localization: ^3.0.1
+  easy_localization_loader: 
+     git:
+      url: https://github.com/ariefwijaya/easy_localization_loader.git
+      ref: feature/network-loader
   flutter:
     sdk: flutter
   google_fonts: ^2.3.1
   liquid_swipe: ^3.0.0
 
 dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
