@@ -33,6 +33,10 @@ class SignUpPage extends StatelessWidget {
             TextFormField(
               cursorColor: kBlackColor,
               decoration: InputDecoration(
+                // focusedBorder: UnderlineInputBorder(
+                //   borderSide: BorderSide(color: kPrimaryColor, width: 2.0),
+                // ),
+                focusColor: kGreenColor,
                 hintStyle: greyTextStyle,
                 hintText: 'Enter your full name',
               ),
@@ -116,7 +120,7 @@ class SignUpPage extends StatelessWidget {
             ),
             child: Text(
               'Get Started',
-              style: whiteTextStyle.copyWith(
+              style: blackTextStyle.copyWith(
                 fontSize: 16,
                 fontWeight: medium,
               ),
